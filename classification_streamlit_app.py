@@ -33,25 +33,25 @@ def load_data():
 	Data = pd.read_csv ("train.csv")  
 
 	XGB_model = pickle.load( open('xgb.pkl', 'rb'))
-# 	RF_model = pickle.load(open('RF.pkl', 'rb'))
-# 	LR_model = pickle.load(open('LR.pkl', 'rb'))
-	# kmeans =   pickle.load(open('kmeans.pkl', 'rb'))
+	RF_model = pickle.load(open('RF.pkl', 'rb'))
+	LR_model = pickle.load(open('LR.pkl', 'rb'))
+	kmeans =   pickle.load(open('kmeans.pkl', 'rb'))
 	
 	
-# 	final_Data = Data.copy()
-# 	final_Data = final_Data.dropna()
-# 	final_Data.drop(['Loan_ID','Gender','Dependents','Self_Employed'],axis=1,inplace=True)
-# 	final_Data = final_Data.reset_index(drop=True)
+	final_Data = Data.copy()
+	final_Data = final_Data.dropna()
+	final_Data.drop(['Loan_ID','Gender','Dependents','Self_Employed'],axis=1,inplace=True)
+	final_Data = final_Data.reset_index(drop=True)
 	
-# 	from sklearn.preprocessing import LabelEncoder  
-# 	## sometimes better to use map rather than labelencoder because
-# 	le = LabelEncoder()
+	from sklearn.preprocessing import LabelEncoder  
+	## sometimes better to use map rather than labelencoder because
+	le = LabelEncoder()
 
-# 	final_Data.Married = le.fit_transform(final_Data.Married)
-# 	final_Data.Education = le.fit_transform(final_Data.Education)
-# 	final_Data.Credit_History = le.fit_transform(final_Data.Credit_History)
-# 	final_Data.Property_Area = le.fit_transform(final_Data.Property_Area)
-# 	final_Data.Loan_Status = le.fit_transform(final_Data.Loan_Status)
+	final_Data.Married = le.fit_transform(final_Data.Married)
+	final_Data.Education = le.fit_transform(final_Data.Education)
+	final_Data.Credit_History = le.fit_transform(final_Data.Credit_History)
+	final_Data.Property_Area = le.fit_transform(final_Data.Property_Area)
+	final_Data.Loan_Status = le.fit_transform(final_Data.Loan_Status)
 
 	return Data,XGB_model,RF_model,LR_model,final_Data
 
@@ -59,115 +59,115 @@ Data,XGB_model,RF_model,LR_model,final_Data  = load_data()
 
 
 
-# # ###################### Data Calculations #####################
-# fig_num = 1
-# df = Data
+# ###################### Data Calculations #####################
+fig_num = 1
+df = Data
 
 
-# @st.cache(hash_funcs={matplotlib.figure.Figure: lambda _: None})
-# def load_matplotlib_figure(df):
+@st.cache(hash_funcs={matplotlib.figure.Figure: lambda _: None})
+def load_matplotlib_figure(df):
 
-# 	fig_num = 1
+	fig_num = 1
 
-# 	data_dist = plt.figure(fig_num, figsize = (15 , 5))
-# 	sns.countplot(df['Loan_Status']);
-# 	fig_num +=1
+	data_dist = plt.figure(fig_num, figsize = (15 , 5))
+	sns.countplot(df['Loan_Status']);
+	fig_num +=1
 
-# 	credit_dist = plt.figure(fig_num,figsize = (10 , 5))
-# 	sns.countplot(df['Credit_History']);
-# 	fig_num +=1
+	credit_dist = plt.figure(fig_num,figsize = (10 , 5))
+	sns.countplot(df['Credit_History']);
+	fig_num +=1
 
-# 	credit_dist_data = plt.figure(fig_num,figsize = (10 , 5))
-# 	sns.countplot(x='Loan_Status', hue='Credit_History', data=df);
-# 	fig_num +=1
+	credit_dist_data = plt.figure(fig_num,figsize = (10 , 5))
+	sns.countplot(x='Loan_Status', hue='Credit_History', data=df);
+	fig_num +=1
 
-# 	gender_dist =plt.figure(fig_num,figsize = (10 , 5))
-# 	sns.countplot(df['Gender']);
-# 	fig_num +=1
+	gender_dist =plt.figure(fig_num,figsize = (10 , 5))
+	sns.countplot(df['Gender']);
+	fig_num +=1
 
-# 	gender_dist_data = plt.figure(fig_num,figsize = (10 , 5))
-# 	sns.countplot(x='Loan_Status', hue='Gender', data=df);
-# 	fig_num +=1
+	gender_dist_data = plt.figure(fig_num,figsize = (10 , 5))
+	sns.countplot(x='Loan_Status', hue='Gender', data=df);
+	fig_num +=1
 
-# 	married_dist = plt.figure(fig_num,figsize = (10 , 5))
-# 	sns.countplot(df['Married']);
-# 	fig_num +=1
+	married_dist = plt.figure(fig_num,figsize = (10 , 5))
+	sns.countplot(df['Married']);
+	fig_num +=1
 
-# 	married_dist_data = plt.figure(fig_num,figsize = (10 , 5))
-# 	sns.countplot(x='Loan_Status', hue='Married', data=df);
-# 	fig_num +=1
-
-
-# 	dependents_dist = plt.figure(figsize = (10 , 5))
-# 	sns.countplot(df['Dependents']);
-# 	fig_num +=1
-
-# 	dependents_dist_data = plt.figure(figsize = (10 , 5))
-# 	sns.countplot(x='Loan_Status', hue='Dependents', data=df);
-# 	fig_num +=1
-
-# 	# first if Dependents = 0 , we got higher chance to get a loan ((very hight chance))
-# 	# good feature
+	married_dist_data = plt.figure(fig_num,figsize = (10 , 5))
+	sns.countplot(x='Loan_Status', hue='Married', data=df);
+	fig_num +=1
 
 
-# 	education_dist  = plt.figure(fig_num,figsize = (10 , 5))
-# 	sns.countplot(df['Education']);
-# 	fig_num +=1
+	dependents_dist = plt.figure(figsize = (10 , 5))
+	sns.countplot(df['Dependents']);
+	fig_num +=1
 
-# 	education_dist_data = plt.figure(fig_num,figsize = (10 , 5))
-# 	sns.countplot(x='Loan_Status', hue='Education', data=df);
-# 	fig_num +=1
+	dependents_dist_data = plt.figure(figsize = (10 , 5))
+	sns.countplot(x='Loan_Status', hue='Dependents', data=df);
+	fig_num +=1
 
-
-# 	employed_dist =plt.figure(figsize = (10 , 5))
-# 	sns.countplot(df['Self_Employed']);
-# 	fig_num +=1
-
-# 	employed_dist_data =plt.figure(figsize = (10 , 5))
-# 	sns.countplot(x='Loan_Status', hue='Self_Employed', data=df);
-# 	fig_num +=1
+	# first if Dependents = 0 , we got higher chance to get a loan ((very hight chance))
+	# good feature
 
 
-# 	propert_dist = plt.figure(fig_num,figsize = (10 , 5))
-# 	sns.countplot(df['Property_Area']);
-# 	fig_num +=1
+	education_dist  = plt.figure(fig_num,figsize = (10 , 5))
+	sns.countplot(df['Education']);
+	fig_num +=1
 
-# 	propert_dist_data = plt.figure(fig_num,figsize = (10 , 5))
-# 	sns.countplot(x='Loan_Status', hue='Property_Area', data=df);
-# 	fig_num +=1
-# 	# first if Dependents = 0 , we got higher chance to get a loan ((very hight chance))
-# 	# good feature
+	education_dist_data = plt.figure(fig_num,figsize = (10 , 5))
+	sns.countplot(x='Loan_Status', hue='Education', data=df);
+	fig_num +=1
 
 
-# 	income_dist = plt.figure(fig_num,figsize = (10 , 5))
-# 	plt.scatter(df['ApplicantIncome'], df['Loan_Status']);
-# 	fig_num +=1
+	employed_dist =plt.figure(figsize = (10 , 5))
+	sns.countplot(df['Self_Employed']);
+	fig_num +=1
 
-# 	# parameter_distribution = plt.figure(fig_num , figsize = (15 , 6))
-# 	# n = 0 
-# 	# for x in ['Age' , 'Annual Income (k$)' , 'Spending Score (1-100)']:
-# 	#     n += 1
-# 	#     plt.subplot(1 , 3 , n)
-# 	#     plt.subplots_adjust(hspace =0.5 , wspace = 0.5)
-# 	#     sns.distplot(df[x] , bins = 20)
-# 	#     plt.title('Distplot of {}'.format(x))
+	employed_dist_data =plt.figure(figsize = (10 , 5))
+	sns.countplot(x='Loan_Status', hue='Self_Employed', data=df);
+	fig_num +=1
 
-# 	# fig_num +=1
+
+	propert_dist = plt.figure(fig_num,figsize = (10 , 5))
+	sns.countplot(df['Property_Area']);
+	fig_num +=1
+
+	propert_dist_data = plt.figure(fig_num,figsize = (10 , 5))
+	sns.countplot(x='Loan_Status', hue='Property_Area', data=df);
+	fig_num +=1
+	# first if Dependents = 0 , we got higher chance to get a loan ((very hight chance))
+	# good feature
+
+
+	income_dist = plt.figure(fig_num,figsize = (10 , 5))
+	plt.scatter(df['ApplicantIncome'], df['Loan_Status']);
+	fig_num +=1
+
+	# parameter_distribution = plt.figure(fig_num , figsize = (15 , 6))
+	# n = 0 
+	# for x in ['Age' , 'Annual Income (k$)' , 'Spending Score (1-100)']:
+	#     n += 1
+	#     plt.subplot(1 , 3 , n)
+	#     plt.subplots_adjust(hspace =0.5 , wspace = 0.5)
+	#     sns.distplot(df[x] , bins = 20)
+	#     plt.title('Distplot of {}'.format(x))
+
+	# fig_num +=1
 
 
 	
-# 	# gender_plot = plt.figure(fig_num , figsize = (15 , 5))
-# 	# sns.countplot(y = 'Gender' , data = df)	
-# 	# fig_num +=1
+	# gender_plot = plt.figure(fig_num , figsize = (15 , 5))
+	# sns.countplot(y = 'Gender' , data = df)	
+	# fig_num +=1
 
 
-# 	# pairplot = sns.pairplot(df1)
+	# pairplot = sns.pairplot(df1)
 
 
 
-# 	return data_dist,credit_dist,credit_dist_data,gender_dist,gender_dist_data,married_dist,married_dist_data,dependents_dist,dependents_dist_data,propert_dist,employed_dist,employed_dist_data,propert_dist_data,income_dist,education_dist,education_dist_data
+	return data_dist,credit_dist,credit_dist_data,gender_dist,gender_dist_data,married_dist,married_dist_data,dependents_dist,dependents_dist_data,propert_dist,employed_dist,employed_dist_data,propert_dist_data,income_dist,education_dist,education_dist_data
 
-# data_dist,credit_dist,credit_dist_data,gender_dist,gender_dist_data,married_dist,married_dist_data,dependents_dist,dependents_dist_data,propert_dist,employed_dist,employed_dist_data,propert_dist_data,income_dist,education_dist,education_dist_data= load_matplotlib_figure(df)
+data_dist,credit_dist,credit_dist_data,gender_dist,gender_dist_data,married_dist,married_dist_data,dependents_dist,dependents_dist_data,propert_dist,employed_dist,employed_dist_data,propert_dist_data,income_dist,education_dist,education_dist_data= load_matplotlib_figure(df)
 
 # # ########################## Page UI #####################
 
