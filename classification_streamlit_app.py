@@ -276,7 +276,7 @@ with tab2:
 	"---"
 	'## Sources'
 	"[Kaggle DataSet](https://www.kaggle.com/datasets/altruistdelhite04/loan-prediction-problem-dataset)"
-	"[Github](https://www.kaggle.com/datasets/vjchoudhary7/customer-segmentation-tutorial-in-python)"
+	"[Github](https://github.com/Kapil3003/03_Classification)"
 
 	# "---"
 	# "- Checkout the app in WebApp tab"
@@ -284,9 +284,9 @@ with tab2:
 	"---"
 
 	" ## Other Projects on this series"
-	" 1. [An Internal Link](/guides/content/editing-an-existing-page)"
-	" 2. [An Internal Link](/guides/content/editing-an-existing-page)"
-	" 4. [An Internal Link](/guides/content/editing-an-existing-page)"
+	" 1. [Clustering - Customer Segmentation](https://kapil3003-01-clustering-clustering-streamlit-app-43fp3b.streamlitapp.com/)"
+	" 2. [Forecasting - Banglore House Price Prediction](https://kapil3003-02-regression-regression-housepriceprediction-ifckzh.streamlitapp.com/)"
+	" 4. [Hyper parameter Optimisation - Breast Cancer Prediction](https://github.com/Kapil3003/04_Hyperparameter_Optimization)"
 
 with tab3:
 
