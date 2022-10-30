@@ -267,7 +267,7 @@ with tab1:
 
 
 with tab2:
-	"## Project Overview"
+	#"## Project Overview"
 
 	'##### Binary Classification - Loan Approval Prediction '
 	'Aim of this project is to predict if loan will get approved or not based on the binary classification models'
