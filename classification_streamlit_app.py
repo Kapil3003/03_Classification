@@ -269,6 +269,9 @@ with tab1:
 with tab2:
 	"## Project Overview"
 
+	'##### Binary Classification - Loan Approval Prediction '
+	'Aim of this project is to predict if loan will get approved or not based on the binary classification models'
+
 	"This is the third project in the ML for Data science series. The aim of this project is to"
 
 	"- Practice EDA and Feature Engineering for classifier model"
@@ -299,13 +302,14 @@ with tab2:
 with tab3:
 
 	"# Problem Statement"
-
-	'This is a binary classification problem' 
+	'##### Binary Classification - Loan Approval Prediction '
+	'Aim of this project is to predict if loan will get approved or not based on the binary classification models'
 
 	'we are going to work on binary classification problem, where we got some information about sample of peoples, and we need to predict whether we should give someone a loan or not depending on personal information. '
 	'Our Dataset is very small(614 entries) , so we wont be focusing on building the accurate prediction model.'
 
 	'main aim of the projects is to practive EDA, get understanding of classification models, there performance matrices and K Fold cross validation'
+	
 	"---"
 	"#### DataSet"
 	st.table(df.head())
