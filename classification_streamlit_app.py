@@ -35,7 +35,7 @@ def load_data():
 	XGB_model = pickle.load( open('xgb.pkl', 'rb'))
 	RF_model = pickle.load(open('RF.pkl', 'rb'))
 	LR_model = pickle.load(open('LR.pkl', 'rb'))
-	kmeans =   pickle.load(open('kmeans.pkl', 'rb'))
+	
 	
 	
 	final_Data = Data.copy()
