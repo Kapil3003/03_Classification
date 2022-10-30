@@ -59,7 +59,7 @@ df = Data
 
 
 @st.cache(hash_funcs={matplotlib.figure.Figure: lambda _: None})
-def load_matplotlib_figure():
+def load_matplotlib_figure(df):
 
 	fig_num = 1
 
@@ -161,7 +161,7 @@ def load_matplotlib_figure():
 
 	return data_dist,credit_dist,credit_dist_data,gender_dist,gender_dist_data,married_dist,married_dist_data,dependents_dist,dependents_dist_data,propert_dist,employed_dist,employed_dist_data,propert_dist_data,income_dist,education_dist,education_dist_data
 
-data_dist,credit_dist,credit_dist_data,gender_dist,gender_dist_data,married_dist,married_dist_data,dependents_dist,dependents_dist_data,propert_dist,employed_dist,employed_dist_data,propert_dist_data,income_dist,education_dist,education_dist_data= load_matplotlib_figure()
+data_dist,credit_dist,credit_dist_data,gender_dist,gender_dist_data,married_dist,married_dist_data,dependents_dist,dependents_dist_data,propert_dist,employed_dist,employed_dist_data,propert_dist_data,income_dist,education_dist,education_dist_data= load_matplotlib_figure(df)
 
 # ########################## Page UI #####################
 
