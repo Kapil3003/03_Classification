@@ -24,6 +24,11 @@ st.set_page_config(layout="wide")
 
 @st.cache(hash_funcs={dict: lambda _: None})
 def load_data():
+	Data = 0
+	XGB_model = 0
+	RF_model = 0
+	LR_model = 0
+	final_Data = 0
 	
 	Data = pd.read_csv ("train.csv")  
 
@@ -31,21 +36,22 @@ def load_data():
 	RF_model = pickle.load(open('RF.pkl', 'rb'))
 	LR_model = pickle.load(open('LR.pkl', 'rb'))
 	# kmeans =   pickle.load(open('kmeans.pkl', 'rb'))
-
-	final_Data = Data.copy()
-	final_Data = final_Data.dropna()
-	final_Data.drop(['Loan_ID','Gender','Dependents','Self_Employed'],axis=1,inplace=True)
-	final_Data = final_Data.reset_index(drop=True)
 	
-	from sklearn.preprocessing import LabelEncoder  
-	## sometimes better to use map rather than labelencoder because
-	le = LabelEncoder()
+	
+# 	final_Data = Data.copy()
+# 	final_Data = final_Data.dropna()
+# 	final_Data.drop(['Loan_ID','Gender','Dependents','Self_Employed'],axis=1,inplace=True)
+# 	final_Data = final_Data.reset_index(drop=True)
+	
+# 	from sklearn.preprocessing import LabelEncoder  
+# 	## sometimes better to use map rather than labelencoder because
+# 	le = LabelEncoder()
 
-	final_Data.Married = le.fit_transform(final_Data.Married)
-	final_Data.Education = le.fit_transform(final_Data.Education)
-	final_Data.Credit_History = le.fit_transform(final_Data.Credit_History)
-	final_Data.Property_Area = le.fit_transform(final_Data.Property_Area)
-	final_Data.Loan_Status = le.fit_transform(final_Data.Loan_Status)
+# 	final_Data.Married = le.fit_transform(final_Data.Married)
+# 	final_Data.Education = le.fit_transform(final_Data.Education)
+# 	final_Data.Credit_History = le.fit_transform(final_Data.Credit_History)
+# 	final_Data.Property_Area = le.fit_transform(final_Data.Property_Area)
+# 	final_Data.Loan_Status = le.fit_transform(final_Data.Loan_Status)
 
 	return Data,XGB_model,RF_model,LR_model,final_Data
 
