@@ -24,14 +24,20 @@ st.set_page_config(layout="wide")
 
 @st.cache(hash_funcs={dict: lambda _: None})
 def load_data():
+	Data = 0
+	XGB_model = 0
+	RF_model = 0
+	LR_model = 0
+	final_Data = 0
 	
 	Data = pd.read_csv ("train.csv")  
 
 	XGB_model = pickle.load( open('xgb.pkl', 'rb'))
 	RF_model = pickle.load(open('RF.pkl', 'rb'))
 	LR_model = pickle.load(open('LR.pkl', 'rb'))
-	# kmeans =   pickle.load(open('kmeans.pkl', 'rb'))
-
+	
+	
+	
 	final_Data = Data.copy()
 	final_Data = final_Data.dropna()
 	final_Data.drop(['Loan_ID','Gender','Dependents','Self_Employed'],axis=1,inplace=True)
