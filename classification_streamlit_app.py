@@ -301,7 +301,7 @@ with tab2:
 
 with tab3:
 
-	"# Problem Statement"
+	#"# Problem Statement"
 	'##### Binary Classification - Loan Approval Prediction '
 	'Aim of this project is to predict if loan will get approved or not based on the binary classification models'
 
