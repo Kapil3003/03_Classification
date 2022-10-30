@@ -175,7 +175,7 @@ data_dist,credit_dist,credit_dist_data,gender_dist,gender_dist_data,married_dist
 tab1, tab2, tab3 = st.tabs([ "WebApp","Project Overview", "Methodology"])
 
 with tab1:
-	" # Binary Classification - Loan Approval Prediction "
+	" ## Binary Classification - Loan Approval Prediction "
 	" This web app predicts if your home loan will be sanctioned based on the personal information. It will show the prediction done by multiple models"
 	
 	"---"
