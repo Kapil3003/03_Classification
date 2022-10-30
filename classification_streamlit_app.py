@@ -32,9 +32,9 @@ def load_data():
 	
 	Data = pd.read_csv ("train.csv")  
 
-	XGB_model = pickle.load( open('xgb.pkl', 'rb'))
-	RF_model = pickle.load(open('RF.pkl', 'rb'))
-	LR_model = pickle.load(open('LR.pkl', 'rb'))
+# 	XGB_model = pickle.load( open('xgb.pkl', 'rb'))
+# 	RF_model = pickle.load(open('RF.pkl', 'rb'))
+# 	LR_model = pickle.load(open('LR.pkl', 'rb'))
 	# kmeans =   pickle.load(open('kmeans.pkl', 'rb'))
 	
 	
