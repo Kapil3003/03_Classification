@@ -230,9 +230,9 @@ with tab1:
 	predict_XGB = XGB_model.predict(a)[0]
 	predict_RF = RF_model.predict(a)[0]
 	predict_LR =  LR_model.predict(a)[0]
-	predict_XGB = 1
-	predict_RF = 0
-	predict_LR = 1
+# 	predict_XGB = 1
+# 	predict_RF = 0
+# 	predict_LR = 1
 
     
 	'## Prediction'
