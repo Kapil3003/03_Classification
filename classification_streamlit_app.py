@@ -227,7 +227,7 @@ with tab1:
 	a = np.expand_dims(a, 0)
 	
 	"Hello"
-# 	predict_XGB = XGB_model.predict(a)[0]
+	predict_XGB = XGB_model.predict(a)[0]
 	predict_RF = RF_model.predict(a)[0]
 	predict_LR =  LR_model.predict(a)[0]
 	predict_XGB = 1
