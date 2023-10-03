@@ -290,18 +290,18 @@ with tab2:
 
 	# "---"
 	# "- Checkout the app in WebApp tab"
-	# "- Checkout the step by step analysis in Methodology tab"
+	# "- Checkout the step by step analysis in Methodology tab"s
 	"---"
 
 	" ## Projects"
 	
-"1. Clustering - Customer Segmentation [Github](https://github.com/Kapil3003/01_Clustering) [[webApp]](https://kapil3003-01-clustering-clustering-streamlit-app-43fp3b.streamlit.app/) "
+"1. Clustering - Customer Segmentation [Github](https://github.com/Kapil3003/01_Clustering/blob/main/Clustering_CustomerSegmentation.ipynb) [[webApp]](https://kapil3003-01-clustering-clustering-streamlit-app-43fp3b.streamlit.app/) "
 
 "2. Forecasting - Banglore House Price Prediction [Github](https://github.com/Kapil3003/02_Regression/blob/main/.ipynb_checkpoints/Regression_Project-checkpoint.ipynb) [[webApp]](https://kapil3003-02-regression-regression-housepriceprediction-ifckzh.streamlit.app/)" 
 
 "3.  Binary Classification - Loan Approval Prediction  [Github](https://github.com/Kapil3003/03_Classification/blob/main/Classification_LoanPrediction.ipynb) [[webApp]](https://kapil3003-03-classification-classification-streamlit-app-el6w2c.streamlit.app/)"
 
-"4. Hyper parameter Optimisation - Breast Cancer Prediction [Github](https://github.com/Kapil3003/04_Hyperparameter_Optimization) "
+"4. Hyper parameter Optimisation - Breast Cancer Prediction [Github](https://github.com/Kapil3003/04_Hyperparameter_Optimization/blob/main/Hyperparameter%20Optimization.ipynb) "
 
 
 with tab3:
