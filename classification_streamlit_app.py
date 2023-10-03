@@ -294,10 +294,14 @@ with tab2:
 	"---"
 
 	" ## Projects"
-	" 1. [Clustering - Customer Segmentation](https://kapil3003-01-clustering-clustering-streamlit-app-43fp3b.streamlitapp.com/)"
-	" 2. [Forecasting - Banglore House Price Prediction](https://kapil3003-02-regression-regression-housepriceprediction-ifckzh.streamlitapp.com/)"
-	" 3. [Binary Classification - Loan Approval Prediction ](https://kapil3003-03-classification-classification-streamlit-app-el6w2c.streamlitapp.com/)"
-	" 4. [Hyper parameter Optimisation - Breast Cancer Prediction](https://github.com/Kapil3003/04_Hyperparameter_Optimization)"
+	
+"1. Clustering - Customer Segmentation [Github](https://github.com/Kapil3003/01_Clustering) [[webApp]](https://kapil3003-01-clustering-clustering-streamlit-app-43fp3b.streamlit.app/) "
+
+"2. Forecasting - Banglore House Price Prediction [Github](https://github.com/Kapil3003/02_Regression/blob/main/.ipynb_checkpoints/Regression_Project-checkpoint.ipynb) [[webApp]](https://kapil3003-02-regression-regression-housepriceprediction-ifckzh.streamlit.app/)" 
+
+"3.  Binary Classification - Loan Approval Prediction  [Github](https://github.com/Kapil3003/03_Classification/blob/main/Classification_LoanPrediction.ipynb) [[webApp]](https://kapil3003-03-classification-classification-streamlit-app-el6w2c.streamlit.app/)"
+
+"4. Hyper parameter Optimisation - Breast Cancer Prediction [Github](https://github.com/Kapil3003/04_Hyperparameter_Optimization) "
 
 
 with tab3:
