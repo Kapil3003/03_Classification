@@ -22,7 +22,7 @@ pd.set_option('max_colwidth', 150)
 st.set_page_config(layout="wide")
 
 
-@st.cache(hash_funcs={dict: lambda _: None})
+@st.cache_data(hash_funcs={dict: lambda _: None})
 def load_data():
 	Data = 0
 	XGB_model = 0
@@ -64,7 +64,7 @@ fig_num = 1
 df = Data
 
 
-@st.cache(hash_funcs={matplotlib.figure.Figure: lambda _: None})
+@st.cache_data (hash_funcs={matplotlib.figure.Figure: lambda _: None})
 def load_matplotlib_figure(df):
 
 	fig_num = 1
