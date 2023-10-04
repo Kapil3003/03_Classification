@@ -1,5 +1,5 @@
  [Portfolio](https://github.com/Kapil3003/Kapil3003/edit/main/README.md)
  
-# 01_Clustering
+# 01_Classification
  
 ![WebApp](Image_1.PNG)
