@@ -2,4 +2,4 @@
  
 # 03_Classification
   [[webApp]](https://kapil3003-03-classification-classification-streamlit-app-el6w2c.streamlit.app/)
-![WebApp](Image_1.PNG)
+![WebApp](Image_3.PNG)
